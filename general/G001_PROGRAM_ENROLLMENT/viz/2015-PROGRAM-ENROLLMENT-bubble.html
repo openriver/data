@@ -1,0 +1,56 @@
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawSeriesChart);
+
+    function drawSeriesChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['ID', 'Income', 'Max', 'Domain', 'Enroll %'],
+['Open River Playschool M&W',2500.0,8,'Winter',100],
+['Youth Art Class-Ages 9-12 years',1375.0,11,'Winter',100],
+['Instructional Ice Hockey',1025.0,41,'Winter',100],
+['Open River Playschool M&W',2400.0,8,'Spring',100],
+['Flag Football 10 & under',2500.0,40,'Spring',25.00],
+['REC-Art Class 1- Ages 6-8 years',1200.0,12,'Spring',100],
+['Under 4 Soccer',3795.0,72,'Summer',95.8333333300],
+['Summer Camp week 10',1300.0,25,'Summer',88.00],
+['Summer Camp week 1',7500.0,25,'Summer',64.00],
+['Summer Camp week 2',1750.0,25,'Summer',100],
+['Summer Camp week 3',1600.0,25,'Summer',96.00],
+['Summer Camp week 4',1800.0,26,'Summer',100],
+['Summer Camp week 5',1750.0,25,'Summer',100],
+['Summer Camp week 7',1300.0,25,'Summer',88.00],
+['Summer Camp week 8',1300.0,25,'Summer',88.00],
+['Summer Camp week 9',1250.0,25,'Summer',84.00],
+['Under 6 soccer',6200.0,140,'Summer',99.2857142900],
+['T-Ball',1870.0,34,'Baseball',100],
+['Bantam',1625.0,24,'Baseball',54.1666666700],
+['Jr. Mosquito',3630.0,100,'Baseball',33.00],
+['Mosquito',4500.0,100,'Baseball',82.00],
+['Peewee',4375.0,42,'Baseball',97.6190476200],
+['Rally Cap',1700.0,58,'Baseball',34.4827586200],
+['Youth',2250.0,19,'Baseball',94.7368421100],
+
+      ]);
+
+      var options = {
+        title: 'Example data! Income x Max x Domain x Enroll % (2015)',
+        hAxis: {title: 'Income (for programs > $1000)'},
+        vAxis: {title: 'Max Enrollment Capacity'},
+        bubble: {textStyle: {fontSize: 11}}
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="series_chart_div" style="width: 1450px; height: 700px;"></div>
+  </body>
+</html>
+

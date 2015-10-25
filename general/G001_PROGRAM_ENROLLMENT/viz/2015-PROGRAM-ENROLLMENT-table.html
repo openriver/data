@@ -1,0 +1,85 @@
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["table"]});
+      google.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Domain');
+        data.addColumn('string', 'Heading');
+        data.addColumn('string', 'Code');
+        data.addColumn('string', 'Name');
+        data.addColumn('number', 'Min');
+        data.addColumn('number', 'Max');
+        data.addColumn('number', 'Enroll');
+        data.addColumn('number', 'Web Enroll');
+        data.addColumn('number', 'Waits');
+        data.addColumn('number', 'Open');
+        data.addColumn('number', 'Income');
+        data.addRows([
+['Winter','Adult','AC','Art Club',2,18,15,3,0,3,450.00],
+['Winter','Adult','KFB','Knitting for Beginners',5,15,8,4,0,7,240.00],
+['Winter','Adult','CAB','Co-ed Adult Badminton',8,40,17,3,0,23,150.00],
+['Winter','Adult','MBHW','Men`s Ball Hockey',12,30,24,0,0,6,360.00],
+['Winter','Family','FAN','Family Art Night',1,15,7,2,0,8,35.00],
+['Winter','Preschool','ArtClass2-5yrs','Kinder Art Class- Ages 2-5 years',5,11,6,4,0,5,540.00],
+['Winter','Preschool','PSMW','Open River Playschool M&W',6,8,8,0,0,0,2500.00],
+['Winter','Youth','Artclass6-8yrs','Youth Art Class-Ages 6-8 years',5,11,8,6,0,3,760.00],
+['Winter','Youth','ArtClass9-12yrs','Youth Art Class-Ages 9-12 years',5,11,11,6,0,0,1375.00],
+['Winter','Youth','ASAC','Afterschool Arts & Crafts',7,15,11,5,0,4,605.00],
+['Winter','Youth','MarBrArt','March Break Art Camp',5,27,23,5,0,4,543.00],
+['Winter','Youth','MBC','March Break Camp 2015',6,20,16,1,0,4,550.00],
+['Winter','Youth','IIH','Instructional Ice Hockey',10,41,41,0,1,0,1025.00],
+['Spring','Adult','ARTClubS','Art Club - Spring Session',2,18,16,3,0,2,395.00],
+['Spring','Adult','KC','Knitting Club',6,12,6,1,0,6,210.00],
+['Spring','Preschool','PSMWs','Open River Playschool M&W',6,8,8,0,0,0,2400.00],
+['Spring','Preschool','REC-KinderArtS','REC-Kinder Art',5,11,9,4,0,2,810.00],
+['Spring','Youth','AACSpring','Afterschool Arts & Crafts',7,15,9,4,0,6,495.00],
+['Spring','Youth','AST','After School Tennis Gr. 1-3',6,20,20,9,2,0,626.00],
+['Spring','Youth','ASTK','After School Tennis Kindergarten',5,12,1,0,0,11,25.00],
+['Spring','Youth','FF10','Flag Football 10 & under',10,40,10,4,0,30,2500.00],
+['Spring','Youth','FF12','Flag Football 12 & under',10,40,12,4,0,28,600.00],
+['Spring','Youth','REC-ART1S6-8','REC-Art Class 1- Ages 6-8 years',5,12,12,10,4,0,1200.00],
+['Spring','Youth','REC-ART2S9-12','REC-Art Class 2 Ages 9-12 years',5,11,7,7,0,4,875.00],
+['Spring','Youth','RECClass2-6-8yr','Art Class 4 Ages 6-8 years',5,11,8,2,0,3,800.00],
+['Summer','Adult','ASF','Co-Ed Adult Soccer',4,50,30,0,0,20,420.00],
+['Summer','Adult','MBHS','Men`s Ball Hockey',12,30,26,0,0,4,390.00],
+['Summer','Adult','CAV','Co-ed Adult Volleyball',10,50,12,1,0,38,180.00],
+['Summer','Preschool','PTJ','Preschool Tennis',4,12,3,3,0,9,90.00],
+['Summer','Preschool','ITS3','Intro to Sports - 3 yrs',10,21,21,9,1,0,500.00],
+['Summer','Preschool','ITS4-5','Intro to Sports',10,21,21,10,2,0,500.00],
+['Summer','Preschool','U4S','Under 4 Soccer',10,72,69,24,0,3,3795.00],
+['Summer','Youth','SC10','Summer Camp week 10',10,25,22,2,0,3,1300.00],
+['Summer','Youth','SC1','Summer Camp week 1',10,25,16,0,0,9,7500.00],
+['Summer','Youth','SC2','Summer Camp week 2',10,25,25,2,1,0,1750.00],
+['Summer','Youth','SC3','Summer Camp week 3',10,25,24,5,0,1,1600.00],
+['Summer','Youth','SC4','Summer Camp week 4',10,26,26,6,0,0,1800.00],
+['Summer','Youth','SC5','Summer Camp week 5',10,25,25,1,0,0,1750.00],
+['Summer','Youth','SC6','Summer Camp week 6',10,25,16,1,0,9,600.00],
+['Summer','Youth','SC7','Summer Camp week 7',10,25,22,1,0,3,1300.00],
+['Summer','Youth','SC8','Summer Camp week 8',10,25,22,1,0,3,1300.00],
+['Summer','Youth','SC9','Summer Camp week 9',10,25,21,1,0,4,1250.00],
+['Summer','Youth','U6S','Under 6 soccer',10,140,139,29,0,1,6200.00],
+['Summer','Youth','YT','Youth Tennis',4,30,5,1,0,25,270.00],
+['Summer','Youth','YTJ','Youth Tennis',4,30,12,8,0,18,648.00],
+['Summer','Youth','YTT','Youth Tennis 11-18 yrs.',4,20,12,5,0,8,648.00],
+['Summer','Youth','YTTA','Youth Tennis 11-18 yrs.',4,20,5,3,0,15,270.00],
+
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '90%', height: '2000'});
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Example data (!) for Open River, a fictitious muni</h3>
+    <hr/>
+    <div id="table_div"></div>
+  </body>
+</html>
+
