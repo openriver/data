@@ -1,0 +1,37 @@
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+['Quarter', 'Town hall', 'Civic centre', 'Rec field', 'Rink'],
+['Q1',2000,1500,0,1800],
+['Q2',2400,1550,700,700],
+['Q3',2600,1600,1000,50],
+['Q4',3000,1650,0,1950],
+
+      ]);
+
+    var options = {
+      title : 'Electric Usage by Open River Municipal Properties',
+      vAxis: {title: 'Usage'},
+      hAxis: {title: 'Quarter'},
+      seriesType: 'bars',
+      series: {5: {type: 'line'}}
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 700px;"></div>
+  </body>
+</html>
+
